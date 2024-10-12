@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Load the Datasets &#8212; My Jupyter Book</title>
+    <title>Customer Intent Classification with Tensorflow &#8212; My Jupyter Book</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -169,7 +169,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Load the Datasets
+                    Customer Intent Classification with Tensorflow
                 </a>
             </li>
         </ul>
@@ -310,7 +310,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Load the Datasets</h1>
+    <h1>Customer Intent Classification with Tensorflow</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -320,25 +320,24 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Load the Datasets</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-missing-values">Check the Missing Values</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-target-balance">Check the Target Balance</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#display-the-distribution-of-labeled-intents">Display the Distribution of Labeled Intents</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#shuffle-the-dataset">Shuffle the Dataset</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#transform-the-data">Transform the Data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenize-the-words">Tokenize the Words</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pad-the-training-and-test-sequences">Pad the Training and Test Sequences</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#encode-the-labels">Encode the Labels</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-a-validation-set">Prepare a Validation Set</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#define-a-neural-network-architecture">Define a Neural Network Architecture</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-the-model">Fit the Model</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-training-and-validation-loss-curves">Plot Training and Validation Loss Curves</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#retrain-the-model">Retrain the Model</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#examine-the-models-performance-with-the-test-dataset">Examine the Model’s Performance with the Test Dataset</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#predict-the-outcomes-for-new-data">Predict the Outcomes for New Data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#match-predictions-with-severity-levels">Match Predictions with Severity Levels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-datasets">Load the Datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-missing-values">Check the Missing Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-target-balance">Check the Target Balance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#display-the-distribution-of-labeled-intents">Display the Distribution of Labeled Intents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shuffle-the-dataset">Shuffle the Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transform-the-data">Transform the Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenize-the-words">Tokenize the Words</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pad-the-training-and-test-sequences">Pad the Training and Test Sequences</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encode-the-labels">Encode the Labels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-a-validation-set">Prepare a Validation Set</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-a-neural-network-architecture">Define a Neural Network Architecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-the-model">Fit the Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-training-and-validation-loss-curves">Plot Training and Validation Loss Curves</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrain-the-model">Retrain the Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examine-the-models-performance-with-the-test-dataset">Examine the Model’s Performance with the Test Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predict-the-outcomes-for-new-data">Predict the Outcomes for New Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#match-predictions-with-severity-levels">Match Predictions with Severity Levels</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -349,7 +348,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p>Customer Intent Classification with Tensorflow</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="customer-intent-classification-with-tensorflow">
+<h1>Customer Intent Classification with Tensorflow<a class="headerlink" href="#customer-intent-classification-with-tensorflow" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -383,7 +383,7 @@ document.write(`
 </div>
 </div>
 <section id="load-the-datasets">
-<h1>Load the Datasets<a class="headerlink" href="#load-the-datasets" title="Link to this heading">#</a></h1>
+<h2>Load the Datasets<a class="headerlink" href="#load-the-datasets" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;./train.csv&quot;</span><span class="p">)</span>
@@ -512,7 +512,7 @@ document.write(`
 </div>
 </section>
 <section id="check-the-missing-values">
-<h1>Check the Missing Values<a class="headerlink" href="#check-the-missing-values" title="Link to this heading">#</a></h1>
+<h2>Check the Missing Values<a class="headerlink" href="#check-the-missing-values" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_train</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -551,7 +551,7 @@ dtype: int64
 </div>
 </section>
 <section id="check-the-target-balance">
-<h1>Check the Target Balance<a class="headerlink" href="#check-the-target-balance" title="Link to this heading">#</a></h1>
+<h2>Check the Target Balance<a class="headerlink" href="#check-the-target-balance" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unique_values</span> <span class="o">=</span> <span class="n">df_train</span><span class="p">[</span><span class="s2">&quot;category&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
@@ -611,7 +611,7 @@ Name: count, Length: 77, dtype: int64
 </div>
 </section>
 <section id="display-the-distribution-of-labeled-intents">
-<h1>Display the Distribution of Labeled Intents<a class="headerlink" href="#display-the-distribution-of-labeled-intents" title="Link to this heading">#</a></h1>
+<h2>Display the Distribution of Labeled Intents<a class="headerlink" href="#display-the-distribution-of-labeled-intents" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">:(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">)})</span>
@@ -626,7 +626,7 @@ Name: count, Length: 77, dtype: int64
 </div>
 </section>
 <section id="shuffle-the-dataset">
-<h1>Shuffle the Dataset<a class="headerlink" href="#shuffle-the-dataset" title="Link to this heading">#</a></h1>
+<h2>Shuffle the Dataset<a class="headerlink" href="#shuffle-the-dataset" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_train</span> <span class="o">=</span> <span class="n">df_train</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
@@ -636,7 +636,7 @@ Name: count, Length: 77, dtype: int64
 </div>
 </section>
 <section id="transform-the-data">
-<h1>Transform the Data<a class="headerlink" href="#transform-the-data" title="Link to this heading">#</a></h1>
+<h2>Transform the Data<a class="headerlink" href="#transform-the-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_data</span> <span class="o">=</span> <span class="n">df_train</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
@@ -647,7 +647,7 @@ Name: count, Length: 77, dtype: int64
 </div>
 </section>
 <section id="tokenize-the-words">
-<h1>Tokenize the Words<a class="headerlink" href="#tokenize-the-words" title="Link to this heading">#</a></h1>
+<h2>Tokenize the Words<a class="headerlink" href="#tokenize-the-words" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vocab_size</span> <span class="o">=</span> <span class="mi">5000</span>
@@ -674,7 +674,7 @@ Name: count, Length: 77, dtype: int64
 </div>
 </section>
 <section id="pad-the-training-and-test-sequences">
-<h1>Pad the Training and Test Sequences<a class="headerlink" href="#pad-the-training-and-test-sequences" title="Link to this heading">#</a></h1>
+<h2>Pad the Training and Test Sequences<a class="headerlink" href="#pad-the-training-and-test-sequences" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_length</span> <span class="o">=</span> <span class="mi">50</span>
@@ -695,7 +695,7 @@ Name: count, Length: 77, dtype: int64
 </div>
 </section>
 <section id="encode-the-labels">
-<h1>Encode the Labels<a class="headerlink" href="#encode-the-labels" title="Link to this heading">#</a></h1>
+<h2>Encode the Labels<a class="headerlink" href="#encode-the-labels" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_labels</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">df_train</span><span class="p">[</span><span class="s1">&#39;category&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">codes</span>
@@ -714,7 +714,7 @@ Name: count, Length: 77, dtype: int64
 </div>
 </section>
 <section id="prepare-a-validation-set">
-<h1>Prepare a Validation Set<a class="headerlink" href="#prepare-a-validation-set" title="Link to this heading">#</a></h1>
+<h2>Prepare a Validation Set<a class="headerlink" href="#prepare-a-validation-set" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">partial_x_train</span> <span class="o">=</span> <span class="n">x_train</span><span class="p">[:</span><span class="mi">9000</span><span class="p">]</span>
@@ -728,7 +728,7 @@ Name: count, Length: 77, dtype: int64
 </div>
 </section>
 <section id="define-a-neural-network-architecture">
-<h1>Define a Neural Network Architecture<a class="headerlink" href="#define-a-neural-network-architecture" title="Link to this heading">#</a></h1>
+<h2>Define a Neural Network Architecture<a class="headerlink" href="#define-a-neural-network-architecture" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">embedding_dim</span> <span class="o">=</span> <span class="mi">64</span>
@@ -769,7 +769,7 @@ _________________________________________________________________
 </div>
 </section>
 <section id="fit-the-model">
-<h1>Fit the Model<a class="headerlink" href="#fit-the-model" title="Link to this heading">#</a></h1>
+<h2>Fit the Model<a class="headerlink" href="#fit-the-model" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;sparse_categorical_crossentropy&#39;</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
@@ -832,7 +832,7 @@ Epoch 20/20
 </div>
 </section>
 <section id="plot-training-and-validation-loss-curves">
-<h1>Plot Training and Validation Loss Curves<a class="headerlink" href="#plot-training-and-validation-loss-curves" title="Link to this heading">#</a></h1>
+<h2>Plot Training and Validation Loss Curves<a class="headerlink" href="#plot-training-and-validation-loss-curves" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_history</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">)</span>
@@ -858,7 +858,7 @@ Epoch 20/20
 </div>
 </section>
 <section id="retrain-the-model">
-<h1>Retrain the Model<a class="headerlink" href="#retrain-the-model" title="Link to this heading">#</a></h1>
+<h2>Retrain the Model<a class="headerlink" href="#retrain-the-model" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Epoch number may differ from your observation as the randomized training data.</span>
@@ -915,7 +915,7 @@ Epoch 14/14
 </div>
 </section>
 <section id="examine-the-models-performance-with-the-test-dataset">
-<h1>Examine the Model’s Performance with the Test Dataset<a class="headerlink" href="#examine-the-models-performance-with-the-test-dataset" title="Link to this heading">#</a></h1>
+<h2>Examine the Model’s Performance with the Test Dataset<a class="headerlink" href="#examine-the-models-performance-with-the-test-dataset" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
@@ -950,7 +950,7 @@ Epoch 14/14
 </div>
 </section>
 <section id="predict-the-outcomes-for-new-data">
-<h1>Predict the Outcomes for New Data<a class="headerlink" href="#predict-the-outcomes-for-new-data" title="Link to this heading">#</a></h1>
+<h2>Predict the Outcomes for New Data<a class="headerlink" href="#predict-the-outcomes-for-new-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_text</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;I am still waiting for my card, when will it arrive?&quot;</span><span class="p">,</span>
@@ -980,7 +980,7 @@ Epoch 14/14
 </div>
 </section>
 <section id="match-predictions-with-severity-levels">
-<h1>Match Predictions with Severity Levels<a class="headerlink" href="#match-predictions-with-severity-levels" title="Link to this heading">#</a></h1>
+<h2>Match Predictions with Severity Levels<a class="headerlink" href="#match-predictions-with-severity-levels" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_train</span><span class="p">[</span><span class="s1">&#39;category_codes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">df_train</span><span class="p">[</span><span class="s1">&#39;category&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">codes</span>
@@ -1026,6 +1026,7 @@ Severity Level: High
 </div>
 </div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1074,25 +1075,24 @@ Severity Level: High
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Load the Datasets</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-missing-values">Check the Missing Values</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-target-balance">Check the Target Balance</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#display-the-distribution-of-labeled-intents">Display the Distribution of Labeled Intents</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#shuffle-the-dataset">Shuffle the Dataset</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#transform-the-data">Transform the Data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenize-the-words">Tokenize the Words</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pad-the-training-and-test-sequences">Pad the Training and Test Sequences</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#encode-the-labels">Encode the Labels</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-a-validation-set">Prepare a Validation Set</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#define-a-neural-network-architecture">Define a Neural Network Architecture</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-the-model">Fit the Model</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-training-and-validation-loss-curves">Plot Training and Validation Loss Curves</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#retrain-the-model">Retrain the Model</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#examine-the-models-performance-with-the-test-dataset">Examine the Model’s Performance with the Test Dataset</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#predict-the-outcomes-for-new-data">Predict the Outcomes for New Data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#match-predictions-with-severity-levels">Match Predictions with Severity Levels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-datasets">Load the Datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-missing-values">Check the Missing Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-target-balance">Check the Target Balance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#display-the-distribution-of-labeled-intents">Display the Distribution of Labeled Intents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shuffle-the-dataset">Shuffle the Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transform-the-data">Transform the Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenize-the-words">Tokenize the Words</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pad-the-training-and-test-sequences">Pad the Training and Test Sequences</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encode-the-labels">Encode the Labels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-a-validation-set">Prepare a Validation Set</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-a-neural-network-architecture">Define a Neural Network Architecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-the-model">Fit the Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-training-and-validation-loss-curves">Plot Training and Validation Loss Curves</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrain-the-model">Retrain the Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examine-the-models-performance-with-the-test-dataset">Examine the Model’s Performance with the Test Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predict-the-outcomes-for-new-data">Predict the Outcomes for New Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#match-predictions-with-severity-levels">Match Predictions with Severity Levels</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
